@@ -1,0 +1,218 @@
+/* ========================================
+   ARCHIVO: style.css
+   ESTILO: Meta Dark + Liquid Glass v2.0
+   ========================================
+*/
+
+:root {
+    /* --- PALETA DE COLORES --- */
+    --bg-dark: #000000;
+    --bg-card: #121212;
+    --glass-surface: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --accent-neon: #ccff00;
+    --whatsapp-green: #25D366;
+    --text-main: #ffffff;
+    --text-secondary: #a1a1a6;
+    
+    /* --- DIMENSIONES --- */
+    --nav-height: 64px;
+    --radius-lg: 24px;
+    --radius-pill: 100px;
+    --blur-val: 30px;
+}
+
+/* --- BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; -webkit-font-smoothing: antialiased; }
+body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+img { max-width: 100%; display: block; }
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; }
+.text-neon { color: var(--accent-neon); }
+.text-muted { color: var(--text-secondary); }
+
+/* --- NAVBAR (Meta Style) --- */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1100px;
+    height: var(--nav-height);
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(var(--blur-val));
+    -webkit-backdrop-filter: blur(var(--blur-val));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.brand-logo-img { height: 32px; width: auto; } /* Logo PNG adjustment */
+
+.nav-links { display: flex; gap: 30px; }
+.nav-link { color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; }
+.nav-link:hover, .nav-link.active { color: white; }
+
+/* Search Bar Desktop */
+.search-container { position: relative; margin-left: 20px; }
+.search-input {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    padding: 8px 15px 8px 35px;
+    border-radius: 20px;
+    color: white;
+    width: 160px;
+    transition: width 0.3s;
+}
+.search-input:focus { width: 240px; outline: 1px solid var(--accent-neon); background: black; }
+.search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-secondary); pointer-events: none; }
+
+/* --- HERO VIDEO BACKGROUND --- */
+.hero-video-container {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Casi pantalla completa */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    z-index: 0;
+    object-fit: cover;
+    opacity: 0.6; /* Oscurecer para leer texto */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 90%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    line-height: 1;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- BUTTONS & BADGES --- */
+.btn {
+    padding: 14px 32px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+.btn-primary { background: white; color: black; }
+.btn-primary:hover { background: var(--accent-neon); transform: scale(1.05); }
+
+.store-badges { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+.store-badge {
+    display: flex; align-items: center; gap: 10px;
+    background: #111; border: 1px solid var(--glass-border);
+    padding: 10px 20px; border-radius: 12px;
+    color: white; transition: 0.3s;
+}
+.store-badge:hover { background: #222; border-color: white; }
+.store-badge img { height: 24px; width: 24px; }
+
+/* --- CARDS & GRIDS --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
+
+/* Reviews Section */
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+.review-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 20px;
+}
+.review-header { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
+.review-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.stars { color: #FFD700; font-size: 0.9rem; }
+.review-img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-top: 15px; opacity: 0.8; }
+
+/* Gallery Grid (Taken with) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+.gallery-item {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    position: relative;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* --- MOBILE OPTIMIZATION (Meta App Style) --- */
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: white; }
+
+@media (max-width: 768px) {
+    .navbar { 
+        top: auto; bottom: 20px; /* Floating Bottom Bar style Meta */
+        width: 90%; 
+        background: rgba(20,20,20,0.9);
+        height: 60px;
+    }
+    .brand-logo-img { height: 24px; }
+    .nav-links, .nav-actions, .search-container { display: none; }
+    .menu-toggle { display: block; margin-left: auto; }
+    
+    .hero-title { font-size: 2.8rem; }
+    .hero-video-container { height: 85vh; }
+    
+    .gallery-grid { grid-template-columns: 1fr; }
+    .review-grid { grid-template-columns: 1fr; }
+    
+    /* App Section Mobile */
+    .app-section-content { flex-direction: column-reverse; text-align: center; }
+}

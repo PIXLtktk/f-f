@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte y Garantía | Focus & Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 20px;
+        }
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="brand"><span class="brand-dot"></span> Focus & Flow</a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="products.html" class="nav-link">Tecnología</a>
+            <a href="variants.html" class="nav-link">Estilos</a>
+            <a href="store.html" class="nav-link">Tienda</a>
+            <a href="about.html" class="nav-link active">Soporte</a>
+        </div>
+        <div class="nav-actions"><a href="store.html" class="btn btn-primary">Comprar</a></div>
+        <div class="menu-toggle" onclick="App.toggleMenu()">☰</div>
+    </nav>
+
+    <div class="container" style="max-width: 800px;">
+        <h1 class="section-heading">Preguntas Frecuentes</h1>
+        
+        <div class="card">
+            <div class="faq-item">
+                <div class="faq-question">¿Son resistentes al agua?</div>
+                <div class="faq-answer">
+                    Las gafas Focus & Flow están diseñadas para la vida diaria. Son resistentes a salpicaduras ligeras, lluvia suave y sudor (grado IPX4). Sin embargo, <strong>no son sumergibles</strong>. No deben usarse para natación ni deportes acuáticos intensos.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto dura la batería grabando video?</div>
+                <div class="faq-answer">
+                    Para optimizar el rendimiento y la temperatura, las gafas están configuradas para grabar clips continuos de aproximadamente <strong>10 a 12 minutos</strong>. Si se graba video de forma intensiva y continua, la batería se consumirá más rápido que en modo solo audio o standby.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo ponerles mi graduación médica?</div>
+                <div class="faq-answer">
+                    Este modelo viene con lentes pre-instalados (Solares, Filtro Azul, etc) y no sustituyen a unas gafas graduadas recetadas por un oftalmólogo. El marco permite el cambio de lentes en algunas ópticas, pero recomendamos consultar con su especialista antes de manipular el dispositivo electrónico.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Qué aplicación necesito?</div>
+                <div class="faq-answer">
+                    Utilizamos la app <strong>HeyCyan</strong>, disponible para descargar gratuitamente en iOS y Android. Desde ahí podrás bajar tus fotos, videos y configurar los ajustes de audio y traducción.
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <p class="text-muted">¿Tienes más dudas?</p>
+            <a href="mailto:soporte@focusandflow.com" class="text-neon" style="text-decoration: underline;">Contactar a Soporte</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
